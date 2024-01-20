@@ -1,4 +1,5 @@
 import { Component} from "../core/heropy";
+import movieStore, {searchMovies} from '../store/movie.js'
 
 export default class Search extends Component {
     render() {
@@ -10,18 +11,21 @@ export default class Search extends Component {
             </button>
         `
         
-        const inputEl = this.el.querySelector('input');
+        const inputEl = this. el.querySelector('input');
         inputEl.addEventListener('input', () => {
-            //
+            movieStore.state.searchText = inputEl.value;
         })
         inputEl.addEventListener('keydown', event => {
-            if(event.key === 'Enter') { // enter 눌리면 검색
-                //
+            if(event.key === 'Enter' && movieStore.state.searchText.trim()) { // enter 눌리면 검색
+                searchMovies(1);
             }
         })
         const btnEl = this.el.querySelector('.btn');
         btnEl.addEventListener('click', () => {
-            //실제 검색시 동작
+            console.log(movieStore.state.searchText)
+            if(movieStore.state.searchText.trim()) { // enter 눌리면 검색
+                searchMovies(1);
+            }
         })
     }
 }
