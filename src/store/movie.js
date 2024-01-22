@@ -19,11 +19,11 @@ export const searchMovies = async page => {
         store.state.message = ''
     }
     try {
-        const res = await fetch('/api/movie', {
+        const res = await fetch('/api/movie.js', {
             method: 'POST',
             body: JSON.stringify({
                     title: store.state.searchText,
-                 page
+                    page
                 })
        })
         const {Search, totalResults, Response, Error} = await res.json()
@@ -45,7 +45,7 @@ export const searchMovies = async page => {
 }   
 export const getMovieDetails = async id => {
     try {
-        const res = await fetch('api/movie', {
+        const res = await fetch('api/movie.js', {
             method: 'POSt',
             body: JSON.stringify({
                 id
