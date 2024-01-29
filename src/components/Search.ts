@@ -13,17 +13,17 @@ export default class Search extends Component {
         `
         
         const inputEl = this. el.querySelector('input');
-        inputEl.addEventListener('input', () => {
+        inputEl?.addEventListener('input', () => {
+            // 위에서 옵셔널 체이닝 해서 밑은 추론 가능
             movieStore.state.searchText = inputEl.value;
         })
-        inputEl.addEventListener('keydown', event => {
+        inputEl?.addEventListener('keydown', event => {
             if(event.key === 'Enter' && movieStore.state.searchText.trim()) { // enter 눌리면 검색
                 searchMovies(1);
             }
         })
         const btnEl = this.el.querySelector('.btn');
-        btnEl.addEventListener('click', () => {
-            console.log(movieStore.state.searchText)
+        btnEl?.addEventListener('click', () => {
             if(movieStore.state.searchText.trim()) { // enter 눌리면 검색
                 searchMovies(1);
             }

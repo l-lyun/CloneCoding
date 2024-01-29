@@ -1,5 +1,5 @@
 import { Component } from "../core/heropy.js";
-import movieStore, {searchMovies} from '../store/movie'
+import movieStore, {searchMovies} from '../store/movie.js'
 
 export default class MovieListMore extends Component {
   constructor() {
