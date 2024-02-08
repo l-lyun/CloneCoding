@@ -68,7 +68,7 @@
 .row__posters {
   display: flex;
   overflow-y: hidden;
-  overflow-x: scroll;
+  overflow-x: auto;
   padding: 20px 0 20px 20px;
   scroll-behavior: smooth;
 }
@@ -82,6 +82,7 @@
   margin-right: 10px;
   transform: transform 450ms;
   border-radius: 4px;
+  flex-shrink: 0;
 }
 .row__poster:hover {
   transform: scale(1.08);
@@ -95,4 +96,31 @@
   .row__poster {
     max-height: 280px;
   }
+}
+
+.swiper-pagination {
+  text-align: right !important;
+}
+
+.swiper-pagination-bullet {
+  background: gray !important;
+  opacity: 1 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: white !important;
+}
+
+.swiper-button-prev {
+  color: white !important;
+}
+
+.swiper-button-next {
+  color: white !important;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 1.3rem !important;
+  font-weight: 600 !important;
 }
