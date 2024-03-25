@@ -2,4 +2,8 @@
 
 ## Merge Repo List
 
-- tic tac toe
+- starbuck: html
+- ipad: css
+- movie_app: js, ts
+- tic_tac_toe: react
+- disney_plus: react
